@@ -3,14 +3,14 @@
   <model name='golf_ball'>
     <link name='link_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>0.0460639</mass>
         <inertia>
-          <ixx>0.1</ixx>
+          <ixx>8.4e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.1</iyy>
+          <iyy>8.4e-06</iyy>
           <iyz>0</iyz>
-          <izz>0.1</izz>
+          <izz>8.4e-06</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -23,7 +23,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.0427</radius>
+            <radius>0.02135</radius>
           </sphere>
         </geometry>
         <material>
@@ -49,7 +49,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.0427</radius>
+            <radius>0.02135</radius>
           </sphere>
         </geometry>
         <surface>
@@ -101,5 +101,9 @@
     </link>
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
+
+    <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
+      <fluid_density>1000</fluid_density>
+    </plugin>
   </model>
 </sdf>

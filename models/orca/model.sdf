@@ -3,15 +3,15 @@
   <model name='orca'>
     <link name='link_0'>
       <inertial>
-        <mass>1</mass>
+        <mass>20.625</mass>
         <inertia>
-          <ixx>0.166667</ixx>
+          <ixx>0.558594</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>0.146094</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
-        </inertia>
+          <izz>0.627344</izz>
+        </inertia> 
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <pose>0.110397 -0.040432 0.513221 0 -0 0</pose>
@@ -101,15 +101,15 @@
     </link>
     <link name='link_1'>
       <inertial>
-        <mass>1</mass>
+        <mass>10.0531</mass>
         <inertia>
-          <ixx>0.145833</ixx>
+          <ixx>0.225524</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.145833</iyy>
+          <iyy>0.225524</iyy>
           <iyz>0</iyz>
-          <izz>0.125</izz>
-        </inertia>
+          <izz>0.0321699</izz>
+        </inertia> 
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <pose>0.108766 -0.01635 0.671878 1.5708 -0 0</pose>
@@ -218,5 +218,9 @@
     </joint>
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
+
+    <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
+      <fluid_density>1000</fluid_density>
+    </plugin>
   </model>
 </sdf>
