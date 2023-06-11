@@ -2,6 +2,8 @@
 
 Gazebo SAUVC environment integrated with ROS
 
+[![](https://img.youtube.com/vi/jII8SlZvBcM/0.jpg)](https://www.youtube.com/watch?v=jII8SlZvBcM)
+
 ## Prerequisites
 
 - [ROS noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
