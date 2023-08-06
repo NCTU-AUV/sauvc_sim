@@ -41,9 +41,9 @@ Launch the environment
 ```sh
 cd ~/catkin_ws
 # lauch the SAUVC arena
-roslaunch sauvc_sim sauvc.world
+roslaunch sauvc_sim sauvc.launch
 # lauch an empty world with an auv inside
-roslaunch sauvc_sim empty_world.world
+roslaunch sauvc_sim empty_world.launch
 ```
 
 Launch keyboard controller
