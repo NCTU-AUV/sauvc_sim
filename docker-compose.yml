@@ -1,0 +1,9 @@
+version: "3"
+services:
+  sauvc_sim:
+    image: sauvc_sim:latest
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${ORCA_WS}:/orca_ws
+    environment:
+      - DISPLAY=${DISPLAY}

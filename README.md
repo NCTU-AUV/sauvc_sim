@@ -1,45 +1,46 @@
 # Gazebo SAUVC environment
 
-Gazebo SAUVC environment integrated with ROS
+Gazebo classic SAUVC environment integrated with ROS noetic
 
 [![](https://img.youtube.com/vi/jII8SlZvBcM/0.jpg)](https://www.youtube.com/watch?v=jII8SlZvBcM)
 
-## Prerequisites
-
-- [ROS noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
-
-Add the following lines to ~/.bashrc
-
-```sh
-source /opt/ros/noetic/setup.bash
-source /usr/share/gazebo/setup.bash
-```
 
 ## Installation
 
-Create ROS workspace and clone the repo:
+```
+export ORCA_WS=/path/to/your/workspace
+```
 
-```sh
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
+```
+mkdir -p ${ORCA_WS}/src
+cd ${ORCA_WS}/src
 git clone git@github.com:NCTU-AUV/sauvc_sim.git
 ```
 
-Build the code
+Build the image:
 
-```sh
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
+```
+cd ${ORCA_WS}/src/sauvc_sim
+docker build -f docker/Dockerfile -t sauvc_sim .
 ```
 
 ## Getting started
 
+Start the container:
+
+```
+docker compose -f docker-compose.yml run sauvc_sim
+```
+
+Build the code:
+
+```
+catkin_make
+```
+
 Launch the environment
 
 ```sh
-cd ~/catkin_ws
 # lauch the SAUVC arena
 roslaunch sauvc_sim sauvc.launch
 # lauch an empty world with an auv inside
