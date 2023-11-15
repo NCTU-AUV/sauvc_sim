@@ -2,14 +2,8 @@
   <world name='default'>
 
     <gui fullscreen='0'>
-      <camera name="user_camera">
-          <track_visual>
-            <name>orca</name>
-            <static>true</static>
-            <use_model_frame>true</use_model_frame>
-            <xyz>0 -8 4</xyz>
-            <inherit_yaw>true</inherit_yaw>
-          </track_visual>
+      <camera name='user_camera'>
+        <pose>8.89582 -13.5053 3.48143 0 0.308 1.808</pose>
       </camera>
     </gui>
 
@@ -57,7 +51,7 @@
       <pose>9 10 -0 0 -0 0</pose>
       <static>1</static>
     </include>
-0.032682
+
     <include>
       <uri>model://red_drum</uri>
       <name>red_drum1</name>
@@ -88,6 +82,14 @@
       <uri>model://golf_ball</uri>
       <pose>7 10 0.2 0 -0 0</pose>
     </include>
+
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/sauvc_sim</namespace>
+        <!-- <argument>model_states:=model_states_demo</argument> -->
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
 
   </world>
 </sdf>

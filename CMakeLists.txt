@@ -1,26 +1,20 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(sauvc_sim)
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-	rospy
-	gazebo_ros
+find_package(
+  ament_cmake REQUIRED
+  rclcpp REQUIRED
+	gazebo_ros REQUIRED
 )
 
-find_package(gazebo REQUIRED)
-
-catkin_package(
-  CATKIN_DEPENDS
-  roscpp
-  rospy
+install(DIRECTORY
+  launch
+  models
+  worlds
+  meshes
+  DESTINATION share/${PROJECT_NAME}
 )
 
-link_directories(${GAZEBO_LIBRARY_DIRS})
+ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/${PROJECT_NAME}.dsv.in")
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-  ${src}
-  ${GAZEBO_INCLUDE_DIRS}
-)
-
-list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+ament_package()
