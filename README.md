@@ -21,7 +21,8 @@ ros2 launch sauvc_sim sauvc.launch
 
 Topics:
 
-```
+```sh
+# ros2 topic list
 /sauvc_sim/bottom_camera/camera_info
 /sauvc_sim/bottom_camera/image_raw
 /sauvc_sim/front_camera/camera_info
@@ -31,4 +32,10 @@ Topics:
 /sauvc_sim/front_camera/points
 /sauvc_sim/link_states
 /sauvc_sim/model_states
+```
+
+Keyboard control:
+
+```
+ros2 run sauvc_sim teleop.py
 ```
