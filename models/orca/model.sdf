@@ -14,7 +14,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>-0.00135 -0.002652 1.5 1.5708 -0 1.57079</pose>
+      <pose>-0.00135 -0.002652 0 1.5708 -0 1.57079</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -114,7 +114,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>0 0 1.7 1.5708 -0 0</pose>
+      <pose>0 0 0.2 1.5708 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -214,7 +214,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>0.000323 -0.00235 1.28669 0 -0 0</pose>
+      <pose>0.000323 -0.00235 -0.21331 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -432,7 +432,7 @@
       </link>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.00135 0.348377 1.5585 0 -0 0</pose>
+      <pose>-0.00135 0.348377 0.0585 0 -0 0</pose>
     </model>
     <model name='bottom_camera'>
       <link name='link'>
@@ -564,7 +564,7 @@
       </link>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0 0.165209 1.51076 -1.5796 0 0</pose>
+      <pose>0 0.165209 0.01076 -1.5796 0 0</pose>
     </model>
     <joint name='link_0_JOINT_1' type='fixed'>
       <parent>link_0</parent>

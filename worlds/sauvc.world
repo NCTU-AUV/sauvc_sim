@@ -13,7 +13,7 @@
 
     <include>
       <uri>model://orca</uri>
-      <pose>7 -10 0 0 0 0</pose>
+      <pose>7 -10 1.5 0 0 0</pose>
     </include>
 
     <include>
