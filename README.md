@@ -16,7 +16,7 @@ colcon build --symlink-install
 Launch the environment
 
 ```sh
-ros2 launch sauvc_sim sauvc.launch
+ros2 launch sauvc_sim sauvc_launch.py
 ```
 
 Topics:
