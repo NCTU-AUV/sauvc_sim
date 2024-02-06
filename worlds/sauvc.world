@@ -28,7 +28,7 @@
     </include>
 
     <include>
-      <uri>model://red_flare</uri>
+      <uri>model://orange_flare</uri>
       <pose>7 -3 0 0 -0 0</pose>
       <static>1</static>
     </include>
@@ -66,12 +66,6 @@
       <static>1</static>
     </include>
 
-    <!-- <include>
-      <uri>model://q_gate</uri>
-      <pose>0 0 -0 0 -0 0</pose>
-      <static>1</static>
-    </include> -->
-
     <include>
       <uri>model://pool_ground</uri>
       <pose>0 0 -0 0 -0 0</pose>
@@ -83,10 +77,24 @@
       <pose>7 10 0.2 0 -0 0</pose>
     </include>
 
+    <include>
+      <uri>model://yellow_flare</uri>
+      <pose>20 5 0.2 0 -0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://blue_flare</uri>
+      <pose>19.8 4 0.2 0 -0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://red_flare</uri>
+      <pose>19.6 3 0.2 0 -0 0</pose>
+    </include>
+
     <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
       <ros>
         <namespace>/sauvc_sim</namespace>
-        <!-- <argument>model_states:=model_states_demo</argument> -->
       </ros>
       <update_rate>1.0</update_rate>
     </plugin>
