@@ -1,0 +1,261 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="pool_world">
+
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+
+    <!-- Physics / gravity -->
+    <gravity>0 0 -9.81</gravity>
+    <magnetic_field>6e-6 2e-5 -4e-5</magnetic_field>
+    <atmosphere type="adiabatic"/>
+    <scene>
+      <ambient>0.4 0.4 0.45 1</ambient>
+      <background>0.85 0.9 1 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Use DART (default in Fortress) -->
+    <physics name="dart" type="ignition-physics-dartsim">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+      </uri>
+    </include>
+
+    <!--
+      Pool geometry (static): 50m x 25m; depth ~2.0m. Origin is at pool center, water surface z=0.
+      The floor is at z = -2.2; walls are 0.3m thick boxes enclosing the water.
+    -->
+    <model name="pool_structure">
+      <static>true</static>
+      <pose>0 0 -2.2 0 0 0</pose>
+
+      <!-- Pool floor -->
+      <link name="floor">
+        <pose>0 0 -0.15 0 0 0</pose>
+        <collision name="floor_col">
+          <geometry>
+            <box>
+              <size>50.6 25.6 0.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="floor_vis">
+          <geometry>
+            <box>
+              <size>50.6 25.6 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <!-- Long walls (x direction) -->
+      <link name="wall_x_pos">
+        <pose>25.15 0 1.1 0 0 0</pose>
+        <collision name="col">
+          <geometry>
+            <box>
+              <size>0.3 25.6 2.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="vis">
+          <geometry>
+            <box>
+              <size>0.3 25.6 2.2</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>0.85 0.85 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <link name="wall_x_neg">
+        <pose>-25.15 0 1.1 0 0 0</pose>
+        <collision name="col">
+          <geometry>
+            <box>
+              <size>0.3 25.6 2.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="vis">
+          <geometry>
+            <box>
+              <size>0.3 25.6 2.2</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>0.85 0.85 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <!-- Short walls (y direction) -->
+      <link name="wall_y_pos">
+        <pose>0 12.65 1.1 0 0 0</pose>
+        <collision name="col">
+          <geometry>
+            <box>
+              <size>50 0.3 2.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="vis">
+          <geometry>
+            <box>
+              <size>50 0.3 2.2</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>0.85 0.85 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <link name="wall_y_neg">
+        <pose>0 -12.65 1.1 0 0 0</pose>
+        <collision name="col">
+          <geometry>
+            <box>
+              <size>50 0.3 2.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="vis">
+          <geometry>
+            <box>
+              <size>50 0.3 2.2</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>0.85 0.85 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model> 
+
+    <!-- World-level Buoyancy system: uniform water region filling the pool -->
+    <!-- <plugin filename="ignition-gazebo-buoyancy-system" name="ignition::gazebo::systems::Buoyancy">
+      <uniform_fluid_density>1000</uniform_fluid_density>
+    </plugin> -->
+
+    <model name="demo_auv">
+      <pose>0 0 -1 0 0.1 0</pose>
+      <link name="auv_link">
+        <inertial>
+          <mass>147.8671</mass>
+          <inertia>
+            <ixx>3.000000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>41.980233</iyy>
+            <iyz>0</iyz>
+            <izz>41.980233</izz>
+          </inertia>
+        </inertial>
+        <collision name="auv_collision">
+          <pose>0 0 0.007 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>2 0.3 0.246445166667</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="auv_visual">
+          <geometry>
+            <box>
+              <size>2 0.3 0.246445166667</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
+      </link>
+
+      <plugin
+        filename="ignition-gazebo-hydrodynamics-system"
+        name="ignition::gazebo::systems::Hydrodynamics">
+        <link_name>auv_link</link_name>
+        <!-- <xDotU>-4.876161</xDotU>
+        <yDotV>-126.324739</yDotV>
+        <zDotW>-126.324739</zDotW>
+        <kDotP>0</kDotP>
+        <mDotQ>-33.46</mDotQ>
+        <nDotR>-33.46</nDotR>
+        <xUabsU>-6.2282</xUabsU>
+        <xU>0</xU>
+        <yVabsV>-601.27</yVabsV>
+        <yV>0</yV>
+        <zWabsW>-601.27</zWabsW>
+        <zW>0</zW>
+        <kPabsP>-0.1916</kPabsP>
+        <kP>0</kP>
+        <mQabsQ>-632.698957</mQabsQ>
+        <mQ>0</mQ>
+        <nRabsR>-632.698957</nRabsR>
+        <nR>0</nR> -->
+
+        <!-- Added mass coefficients - reduced by factor of 10 -->
+        <xDotU>-0.49</xDotU>
+        <yDotV>-12.6</yDotV>
+        <zDotW>-12.6</zDotW>
+        <kDotP>0</kDotP>
+        <mDotQ>-3.35</mDotQ>
+        <nDotR>-3.35</nDotR>
+        <!-- Linear drag coefficients - reduced by factor of 100 -->
+        <xUabsU>-0.062</xUabsU>
+        <xU>0</xU>
+        <yVabsV>-6.01</yVabsV>
+        <yV>0</yV>
+        <zWabsW>-6.01</zWabsW>
+        <zW>0</zW>
+        <!-- Angular drag coefficients - reduced by factor of 1000 -->
+        <kPabsP>-0.0002</kPabsP>
+        <kP>0</kP>
+        <mQabsQ>-0.63</mQabsQ>
+        <mQ>0</mQ>
+        <nRabsR>-0.63</nRabsR>
+        <nR>0</nR>
+      </plugin>
+
+      <plugin filename="libignition-gazebo-velocity-control-system.so"
+        name="ignition::gazebo::systems::VelocityControl">
+          <link_name>auv_link</link_name>
+          <topic>/cmd_vel</topic>
+          <initial_linear>0.0 0.0 0.0</initial_linear>
+          <initial_angular>0.0 0.0 0.0</initial_angular>
+      </plugin>
+    </model>
+  </world>
+</sdf>
