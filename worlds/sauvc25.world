@@ -46,34 +46,12 @@
       <static>true</static>
       <pose>0 0 -2.2 0 0 0</pose>
 
-      <!-- Pool floor -->
-      <link name="floor">
-        <pose>0 0 -0.15 0 0 0</pose>
-        <collision name="floor_col">
-          <geometry>
-            <box>
-              <size>50.6 25.6 0.3</size>
-            </box>
-          </geometry>
-          <surface>
-            <contact>
-              <collide_bitmask>0x01</collide_bitmask>
-            </contact>
-          </surface>
-        </collision>
-        <visual name="floor_vis">
-          <geometry>
-            <box>
-              <size>50.6 25.6 0.3</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.6 0.6 0.6 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-
+      <include>
+        <uri>model://pool_ground25</uri>
+        <pose>0 0 0 0 0 0</pose>
+        <!-- <static>1</static> -->
+      </include>
+      
       <!-- Long walls (x direction) -->
       <link name="wall_x_pos">
         <pose>25.15 0 1.1 0 0 0</pose>
@@ -91,7 +69,10 @@
             </box>
           </geometry>
           <material>
-            <diffuse>0.85 0.85 0.9 1</diffuse>
+            <ambient>0.7 0.8 0.9 1</ambient>
+            <diffuse>0.7 0.8 0.9 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
       </link>
@@ -112,7 +93,10 @@
             </box>
           </geometry>
           <material>
-            <diffuse>0.85 0.85 0.9 1</diffuse>
+            <ambient>0.7 0.8 0.9 1</ambient>
+            <diffuse>0.7 0.8 0.9 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
       </link>
@@ -134,7 +118,10 @@
             </box>
           </geometry>
           <material>
-            <diffuse>0.85 0.85 0.9 1</diffuse>
+            <ambient>0.7 0.8 0.9 1</ambient>
+            <diffuse>0.7 0.8 0.9 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
       </link>
@@ -155,7 +142,10 @@
             </box>
           </geometry>
           <material>
-            <diffuse>0.85 0.85 0.9 1</diffuse>
+            <ambient>0.7 0.8 0.9 1</ambient>
+            <diffuse>0.7 0.8 0.9 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
       </link>
