@@ -3,16 +3,21 @@
   <world name="pool_world">
 
     <plugin
-      filename="gz-sim-physics-system"
+      filename="ignition-gazebo-physics-system"
       name="gz::sim::systems::Physics">
     </plugin>
     <plugin
-      filename="gz-sim-user-commands-system"
+      filename="ignition-gazebo-user-commands-system"
       name="gz::sim::systems::UserCommands">
     </plugin>
     <plugin
-      filename="gz-sim-scene-broadcaster-system"
+      filename="ignition-gazebo-scene-broadcaster-system"
       name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
     </plugin>
 
     <!-- Physics / gravity -->
@@ -152,9 +157,9 @@
     </model> 
 
     <!-- World-level Buoyancy system: uniform water region filling the pool -->
-    <!-- <plugin filename="ignition-gazebo-buoyancy-system" name="ignition::gazebo::systems::Buoyancy">
+    <plugin filename="ignition-gazebo-buoyancy-system" name="ignition::gazebo::systems::Buoyancy">
       <uniform_fluid_density>1000</uniform_fluid_density>
-    </plugin> -->
+    </plugin>
 
     <model name="demo_auv">
       <pose>0 0 -1 0 0.1 0</pose>
@@ -191,6 +196,28 @@
             <specular>1 0 0 1</specular>
           </material>
         </visual>
+
+        <!-- Camera sensor -->
+        <sensor name="camera" type="camera">
+          <pose>1.0 0 0.15 0 0 0</pose>
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>camera</topic>
+        </sensor>
+
       </link>
 
       <plugin
