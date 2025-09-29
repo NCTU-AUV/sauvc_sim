@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
 <sdf version="1.7">
-  <!--
-    SAUVC qualification gate + starting zone model.sdf
-    - qualification_gate: 1.50 m wide, ~1.00 m depth (downward), orange markings both sides
-      placed at x = 10.0 by default (so approx 10 m from starting zone)
-    - starting_zone: 1.4 x 1.4 m visual marker on surface (no collision)
-    Adjust model poses as needed to match your world coordinate system.
-  -->
 
   <!-- Qualification Gate model (static) -->
   <model name="qualification_gate">
