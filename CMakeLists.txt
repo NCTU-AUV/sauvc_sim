@@ -7,12 +7,14 @@ find_package(
   rclcpp REQUIRED
   rclpy REQUIRED
 	gazebo_ros REQUIRED
+  ros_gz_interfaces REQUIRED
 )
 
 ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/teleop.py
+  scripts/entity_spawner.py  
   DESTINATION lib/${PROJECT_NAME}
 )
 

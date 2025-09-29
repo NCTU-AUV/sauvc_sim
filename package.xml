@@ -16,6 +16,7 @@
   <depend>ros_gz_sim</depend>
   <depend>rclcpp</depend>
   <depend>rclpy</depend>
+  <depend>ros_gz_interfaces</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
