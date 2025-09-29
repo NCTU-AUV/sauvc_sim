@@ -162,7 +162,7 @@
     </plugin>
 
     <model name="demo_auv">
-      <pose>0 0 -1 0 0.1 0</pose>
+      <pose>-24 0 -0.2 0 0 0</pose>
       <link name="auv_link">
         <inertial>
           <mass>147.8671</mass>
