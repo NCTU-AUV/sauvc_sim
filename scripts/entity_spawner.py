@@ -38,7 +38,7 @@ class EntitySpawner(Node):
         # Format: (model_name, count, x_range, y_range, z_offset)
         self.entity_configs = [
             # Gate - spawn first to get x position
-            ('gate', 1, (0, 22), (0.5, 0.5), -2.2),
+            ('gate', 1, (0, 22), (-0.5, -0.5), -2.2),
             
             # Orange flare - will be adjusted after gate spawn
             ('orange_flare', 1, (-3, 25), (-8.5, -4.5), -2.2),
