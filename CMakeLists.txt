@@ -14,6 +14,7 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/teleop.py
+  scripts/teleop25.py
   scripts/entity_spawner.py  
   DESTINATION lib/${PROJECT_NAME}
 )
