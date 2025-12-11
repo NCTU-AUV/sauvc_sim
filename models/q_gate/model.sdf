@@ -36,7 +36,7 @@
       </visual>
 
       <collision name="top_bar_collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
             <radius>0.04</radius>
