@@ -19,7 +19,7 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
-      <visual name='ModelPreview_4::link_0::visual_3'>
+      <visual name='ModelPreview_4-link_0-visual_3'>
         <pose>0 0 -0.4 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -44,7 +44,7 @@
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <visual name='ModelPreview_1::link_0::visual_1'>
+      <visual name='ModelPreview_1-link_0-visual_1'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -94,7 +94,7 @@
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <visual name='ModelPreview_4::link_0::visual_2'>
+      <visual name='ModelPreview_4-link_0-visual_2'>
         <pose>0 0 0.4 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -194,7 +194,7 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
-      <visual name='ModelPreview_4::link_0_clone::visual_1'>
+      <visual name='ModelPreview_4-link_0_clone-visual_1'>
         <pose>0 0 0.4 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -219,7 +219,7 @@
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <visual name='ModelPreview_4::link_0_clone::visual_3'>
+      <visual name='ModelPreview_4-link_0_clone-visual_3'>
         <pose>0 0 -0.4 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -269,7 +269,7 @@
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
-      <visual name='ModelPreview_4::link_0_clone::visual_2'>
+      <visual name='ModelPreview_4-link_0_clone-visual_2'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
