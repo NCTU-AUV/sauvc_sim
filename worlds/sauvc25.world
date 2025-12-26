@@ -163,8 +163,13 @@
 
     <include>
       <uri>model://demo_auv</uri>
+      
+      <!-- qualification -->
       <pose>-24.6 0 -0.2 0 0 0</pose>
-      <!-- <pose>11 -11.5 -0.2 0 0 1.5708</pose> -->
+
+      <!-- final -->
+      <pose>11 -11.5 -0.2 0 0 1.5708</pose>
+    
     </include>
 
     <include>
