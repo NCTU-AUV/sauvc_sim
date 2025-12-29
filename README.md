@@ -1,41 +1,37 @@
 # Gazebo SAUVC environment
 
-Gazebo classic SAUVC environment with ROS2 humble
+Gazebo fortress SAUVC environment with ROS2 humble
+![Screenshot from 2025-11-10 15-48-32](https://hackmd.io/_uploads/SJ_Musom-l.png)
 
-[![](https://img.youtube.com/vi/jII8SlZvBcM/0.jpg)](https://www.youtube.com/watch?v=jII8SlZvBcM)
 
 ## Getting started
 
 Build the code:
-
 ```
-colcon build --symlink-install
+colcon build --symlink-install --package-select sauvc_sim
 . install/setup.sh
 ```
 
+Modify the demo_auv's initial position in `worlds/sauvc25.world` line 164-173
+```
+    <include>
+      <uri>model://demo_auv</uri>
+
+      <!-- qualification -->
+      <pose>-24.6 0 -0.2 0 0 0</pose>
+
+      <!-- final -->
+      <pose>11 -11.5 -0.2 0 0 1.5708</pose>
+
+    </include>
+```
+
 Launch the environment
-
-```sh
-ros2 launch sauvc_sim sauvc_launch.py
+```
+ros2 launch sauvc_sim sauvc25_launch.py
 ```
 
-Topics:
-
-```sh
-# ros2 topic list
-/sauvc_sim/bottom_camera/camera_info
-/sauvc_sim/bottom_camera/image_raw
-/sauvc_sim/front_camera/camera_info
-/sauvc_sim/front_camera/depth/camera_info
-/sauvc_sim/front_camera/depth/image_raw
-/sauvc_sim/front_camera/image_raw
-/sauvc_sim/front_camera/points
-/sauvc_sim/link_states
-/sauvc_sim/model_states
+Keyboard control and video capturing:
 ```
-
-Keyboard control:
-
-```
-ros2 run sauvc_sim teleop.py
+ros2 run sauvc_sim teleop25.py
 ```
