@@ -30,6 +30,9 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
+        remappings=[
+            ('/cmd_vel', '/fsm/cmd_vel'),
+        ],
         arguments=[
             '/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist',
             '/realsense/image@sensor_msgs/msg/Image@gz.msgs.Image',
